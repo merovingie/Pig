@@ -1,14 +1,11 @@
 version: '3'
 
 services:
-  redis-server:
-    image: 'redis'
-  node-app:
+  nginx-server:
     restart: unless-stopped
     build: .
     ports:
-      - "4000:8081"
+      - "4001:80"
     volumes:
-      - /app/node_modules
-      - .:/app
+      - .:/usr/share/nginx/html
 
